@@ -1,0 +1,27 @@
+{
+  "name": "gatsby-source-unsplash",
+  "version": "1.0.0",
+  "description": "Source plugin for Gatsby to pull in unsplash photos using their API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No current tests\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vacas5/gatsby-source-unsplash.git"
+  },
+  "keywords": [
+    "Gatsby",
+    "Unsplash"
+  ],
+  "author": "Russell J Anderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vacas5/gatsby-source-unsplash/issues"
+  },
+  "homepage": "https://github.com/vacas5/gatsby-source-unsplash#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "bluebird": "^3.5.1"
+  }
+}
