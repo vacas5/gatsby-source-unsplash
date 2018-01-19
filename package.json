@@ -12,7 +12,8 @@
   },
   "keywords": [
     "Gatsby",
-    "Unsplash"
+    "Unsplash",
+    "gatsby-plugin"
   ],
   "author": "Russell J Anderson",
   "license": "MIT",
