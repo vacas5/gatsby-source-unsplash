@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-unsplash",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Source plugin for Gatsby to pull in unsplash photos using their API",
   "main": "index.js",
   "scripts": {
