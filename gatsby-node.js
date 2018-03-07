@@ -2,13 +2,14 @@ const Promise = require("bluebird")
 const axios = require(`axios`)
 const crypto = require(`crypto`)
 
-exports.sourceNodes = ({ boundActionCreators }, { appId, collections }) => {
+exports.sourceNodes = ({ boundActionCreators }, { appId, collections, perPage = 10 }) => {
     const { createNode } = boundActionCreators
 
     return Promise.all(collections.map(collection => {
         return axios.get(`https://api.unsplash.com/collections/${collection}/photos`, {
             params: {
-                client_id: appId
+                client_id: appId,
+                per_page: perPage
             }
         }).then(res => {
             res.data.map(photo => {
