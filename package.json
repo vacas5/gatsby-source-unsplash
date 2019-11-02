@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/vacas5/gatsby-source-unsplash#readme",
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "bluebird": "^3.5.1"
   }
 }
