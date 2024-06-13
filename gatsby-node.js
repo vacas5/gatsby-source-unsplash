@@ -2,14 +2,17 @@ const Promise = require('bluebird');
 const axios = require('axios');
 const crypto = require('crypto');
 
-exports.sourceNodes = ({ actions }, { appId, collections, perPage = 10 }) => {
+exports.sourceNodes = (
+  { actions },
+  { clientId, collections, perPage = 10 }
+) => {
   const { createNode } = actions;
   return Promise.all(
     collections.map(collection => {
       return axios
         .get(`https://api.unsplash.com/collections/${collection}/photos`, {
           params: {
-            client_id: appId,
+            client_id: clientId,
             per_page: perPage,
           },
         })

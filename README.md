@@ -14,18 +14,16 @@ Before using the Unsplash API, you need to [register as a developer](https://uns
 
 ```javascript
 // In your gatsby-config.js
-// Application id provided by Unsplash
+// Client id refers to the access key provided by Unsplash
 // Collections must be public to return photos
 plugins: [
   {
     resolve: `gatsby-source-unsplash`,
     options: {
-      appId: `12345678`,
-      collections: [
-        `098765`
-      ],
+      clientId: `12345678`,
+      collections: [`098765`],
       // optional: will only get page 1, so increase this count to include > 10 photos
-      perPage: `100`
+      perPage: `100`,
     },
   },
 ];
@@ -37,24 +35,24 @@ Get all photo urls in reverse chronological order with the photographer's name:
 
 ```graphql
 query PhotosQuery {
-    allUnsplashPhoto(sort: { fields: [created_at], order: DESC }) {
-      edges {
-        node {
+  allUnsplashPhoto(sort: { fields: [created_at], order: DESC }) {
+    edges {
+      node {
+        id
+        user {
           id
-          user {
-            id
-            name
-          }
-          urls {
-            full
-            regular
-            small
-          }
-          description
-          created_at
+          name
         }
+        urls {
+          full
+          regular
+          small
+        }
+        description
+        created_at
       }
     }
+  }
 }
 ```
 
@@ -62,20 +60,20 @@ Get a specific photo's urls by id with links to photographer's Unsplash profile:
 
 ```graphql
 query PhotoQuery {
-    unsplashPhoto(id: { eq: "GnY_mW1Q6Xc" }) {
-        id
-        description
-        urls {
-            full
-            regular
-            small
-        }
-        user {
-            name
-            links {
-                html
-            }
-        }
+  unsplashPhoto(id: { eq: "GnY_mW1Q6Xc" }) {
+    id
+    description
+    urls {
+      full
+      regular
+      small
     }
+    user {
+      name
+      links {
+        html
+      }
+    }
+  }
 }
 ```
