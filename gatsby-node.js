@@ -10,8 +10,8 @@ exports.sourceNodes = ({ actions }, { appId, collections, perPage = 10 }) => {
         .get(`https://api.unsplash.com/collections/${collection}/photos`, {
           params: {
             client_id: appId,
-            per_page: perPage
-          }
+            per_page: perPage,
+          },
         })
         .then(res => {
           res.data.map(photo => {
@@ -26,8 +26,8 @@ exports.sourceNodes = ({ actions }, { appId, collections, perPage = 10 }) => {
               internal: {
                 type: 'UnsplashPhoto',
                 contentDigest: digest,
-                mediaType: 'application/json'
-              }
+                mediaType: 'application/json',
+              },
             });
 
             createNode(node);
