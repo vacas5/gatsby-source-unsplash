@@ -1,6 +1,4 @@
 name: Tests
-env:
-  UNSPLASH_APP_ID: ${{ secrets.UNSPLASH }}
 on:
   push:
     branches: [master]
